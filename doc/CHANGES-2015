@@ -1,4 +1,4 @@
-$NetBSD: CHANGES-2015,v 1.4542 2015/11/09 20:22:15 fhajny Exp $
+$NetBSD: CHANGES-2015,v 1.4559 2015/11/11 17:37:44 leot Exp $
 
 Changes to the packages collection and infrastructure in 2015:
 
@@ -7751,3 +7751,23 @@ Changes to the packages collection and infrastructure in 2015:
 	Updated net/grive2 to 0.4.1 [abs 2015-11-09]
 	Updated lang/nodejs to 5.0.0 [fhajny 2015-11-09]
 	Added lang/nodejs4 version 4.2.2 [fhajny 2015-11-09]
+	Updated sysutils/xentools45 to 4.5.1nb7 [jnemeth 2015-11-10]
+	Updated devel/rudiments to 0.54 [fhajny 2015-11-10]
+	Updated databases/sqlrelay to 0.64 [fhajny 2015-11-10]
+	Updated sysutils/puppet to 3.8.4 [fhajny 2015-11-10]
+	Updated lang/oracle-jre8 to 8.0.66 [jperkin 2015-11-10]
+	Updated lang/oracle-jdk8 to 8.0.66 [jperkin 2015-11-10]
+	Updated sysutils/salt to 2015.8.1 [sborrill 2015-11-10]
+	Updated filesystems/libntfs to 2015.3.14 [adam 2015-11-10]
+	Updated filesystems/fuse-ntfs-3g to 2015.3.14 [adam 2015-11-10]
+	Updated sysutils/ntfsprogs to 2015.3.14 [adam 2015-11-10]
+	Updated devel/py-dulwich to 0.11.2 [wiz 2015-11-11]
+	Updated devel/py-hg-git to 0.8.3 [wiz 2015-11-11]
+	Updated archivers/unzip to 6.0nb5 [wiz 2015-11-11]
+	Updated graphics/MesaLib to 11.0.5 [tnn 2015-11-11]
+	Updated multimedia/adobe-flash-plugin11 to 11.2.202.548 [tsutsui 2015-11-11]
+	Updated wm/dwm to 6.1 [leot 2015-11-11]
+	Updated x11/dmenu to 4.6 [leot 2015-11-11]
+	Updated net/youtube-dl to 20151110 [leot 2015-11-11]
+	Updated print/mupdf to 1.8 [leot 2015-11-11]
+	Updated multimedia/mpv to 0.13.0 [leot 2015-11-11]
