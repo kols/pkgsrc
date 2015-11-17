@@ -1,4 +1,4 @@
-# $NetBSD: Makefile,v 1.2165 2015/11/16 01:31:47 khorben Exp $
+# $NetBSD: Makefile,v 1.2167 2015/11/16 17:36:47 leot Exp $
 #
 
 COMMENT=	Development utilities
@@ -81,6 +81,7 @@ SUBDIR+=	bmake
 SUBDIR+=	bmkdep
 SUBDIR+=	boa-constructor
 SUBDIR+=	boehm-gc
+SUBDIR+=	bokken
 SUBDIR+=	boost-build
 SUBDIR+=	boost-docs
 SUBDIR+=	boost-headers
@@ -1618,6 +1619,7 @@ SUBDIR+=	py-click-threading
 SUBDIR+=	py-compizconfig
 SUBDIR+=	py-configargparse
 SUBDIR+=	py-configobj
+SUBDIR+=	py-construct
 SUBDIR+=	py-coverage
 SUBDIR+=	py-cparser
 SUBDIR+=	py-curses
