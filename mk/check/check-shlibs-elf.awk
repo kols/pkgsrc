@@ -139,7 +139,7 @@ function checkshlib(DSO, needed, rpath, found, dso_rpath, got_rpath, nrpath) {
 				for (e = 1; e <= nedirs; e++) {
 					if (rpath[p] == edirs[e] ||
 					    substr(rpath[p], 1, length(edirs[e]) + 1) == edirs[e] "/") {
-						print DSO ": rpath " rpath[p] " relative to CHECK_WRKREF_EXTRA_DIRS directory " edirs[e]
+						print DSO ": dependency " rpath[p] "/" lib " relative to CHECK_WRKREF_EXTRA_DIRS directory " edirs[e]
 					}
 				}
 				found = 1
