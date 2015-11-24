@@ -9,17 +9,13 @@ PKG_SUGGESTED_OPTIONS=		gnupg2
 
 .if !empty(PKG_OPTIONS:Mgnupg21)
 DEPENDS+=		gnupg21>=2.1:../../security/gnupg21
-FIND_PREFIX:=	GPG2DIR=gnupg21
-.include "../../mk/find-prefix.mk"
-CONFIGURE_ARGS+=	--with-gpgsm=${GPG2DIR}/bin/gpgsm
-CONFIGURE_ARGS+=	--with-gpg=${GPG2DIR}/bin/gpg2
+CONFIGURE_ARGS+=	--with-gpgsm=${LOCALBASE}/bin/gpgsm
+CONFIGURE_ARGS+=	--with-gpg=${LOCALBASE}/bin/gpg2
 REPLACE_SH+=		tests/gpg/pinentry
 .elif !empty(PKG_OPTIONS:Mgnupg2)
 DEPENDS+=		gnupg2>=2.0<2.1:../../security/gnupg2
-FIND_PREFIX:=	GPG2DIR=gnupg2
-.include "../../mk/find-prefix.mk"
-CONFIGURE_ARGS+=	--with-gpgsm=${GPG2DIR}/bin/gpgsm
-CONFIGURE_ARGS+=	--with-gpg=${GPG2DIR}/bin/gpg2
+CONFIGURE_ARGS+=	--with-gpgsm=${LOCALBASE}/bin/gpgsm
+CONFIGURE_ARGS+=	--with-gpg=${LOCALBASE}/bin/gpg2
 REPLACE_SH+=		tests/gpg/pinentry
 .else
 DEPENDS+=		gnupg>=1.4.2:../../security/gnupg
