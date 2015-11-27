@@ -1,4 +1,4 @@
-# $NetBSD: Makefile,v 1.1 2015/11/16 02:05:09 khorben Exp $
+# $NetBSD: Makefile,v 1.3 2015/11/19 07:46:57 wiz Exp $
 
 DISTNAME=	bokken-1.8
 CATEGORIES=	devel
@@ -9,12 +9,19 @@ HOMEPAGE=	http://bokken.re/
 COMMENT=	Open Source Reverse Code Engineering
 LICENSE=	gnu-gpl-v2
 
+DEPENDS+=	${PYPKGPREFIX}-graphviz-[0-9]*:../../graphics/py-graphviz
+DEPENDS+=	${PYPKGPREFIX}-gtk2-[0-9]*:../../x11/py-gtk2
+DEPENDS+=	${PYPKGPREFIX}-gtksourceview-[0-9]*:../../x11/py-gtksourceview
+DEPENDS+=	${PYPKGPREFIX}-radare2-[0-9]*:../../devel/py-radare2
+
 USE_TOOLS+=	pax
 
 NO_BUILD=	yes
 
 REPLACE_PYTHON=	bokken.py lib/web/utils.py ui/xdot.py
 REPLACE_SH=	bokken
+
+PYTHON_VERSIONS_INCOMPATIBLE=	33 34 # py-gtk2
 
 SUBST_CLASSES+=			bin-bokken
 SUBST_STAGE.bin-bokken=		post-patch
@@ -35,10 +42,6 @@ do-install:
 	${RM} ${DESTDIR}${PREFIX}/share/bokken/.gitignore
 	${MV} ${DESTDIR}${PREFIX}/share/bokken/bokken ${DESTDIR}${PREFIX}/bin/bokken
 
-.include "../../x11/py-gtk2/buildlink3.mk"
-.include "../../x11/py-gtksourceview/buildlink3.mk"
-.include "../../graphics/py-pygraphviz/buildlink3.mk"
-.include "../../devel/py-radare2/buildlink3.mk"
 .include "../../lang/python/application.mk"
 .include "../../sysutils/desktop-file-utils/desktopdb.mk"
 .include "../../mk/bsd.pkg.mk"

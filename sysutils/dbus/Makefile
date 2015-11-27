@@ -1,6 +1,6 @@
-# $NetBSD: Makefile,v 1.91 2015/11/07 21:33:32 asau Exp $
+# $NetBSD: Makefile,v 1.93 2015/11/22 23:31:29 wiz Exp $
 
-DISTNAME=	dbus-1.10.2
+DISTNAME=	dbus-1.10.4
 CATEGORIES=	sysutils
 MASTER_SITES=	http://dbus.freedesktop.org/releases/dbus/
 
@@ -12,7 +12,7 @@ LICENSE=	gnu-gpl-v2
 CONFLICTS+=	dbus-glib<0.71
 CONFLICTS+=	py27-dbus<0.71
 
-BUILD_DEPENDS+=	docbook-xsl>=0:../../textproc/docbook-xsl
+BUILD_DEPENDS+=	xmlto-[0-9]*:../../textproc/xmlto
 
 GNU_CONFIGURE=		YES
 USE_TOOLS+=		gmake msgfmt pkg-config
@@ -99,8 +99,6 @@ BUILDLINK_TRANSFORM+=	rm:-lrt
 .endif
 
 .include "options.mk"
-
-BUILD_DEPENDS+=	xmlto-[0-9]*:../../textproc/xmlto
 
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/doc/introspect.* \
