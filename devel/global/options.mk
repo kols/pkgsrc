@@ -4,6 +4,7 @@ PKG_OPTIONS_VAR=	PKG_OPTIONS.global
 PKG_OPTIONS_REQUIRED_GROUPS=	db
 PKG_OPTIONS_GROUP.db=	bdb sqlite3
 PKG_SUGGESTED_OPTIONS=	sqlite3
+PKG_SUPPORTED_OPTIONS= 	exctags
 
 .include "../../mk/bsd.options.mk"
 
@@ -14,4 +15,8 @@ PKG_SUGGESTED_OPTIONS=	sqlite3
 .if !empty(PKG_OPTIONS:Msqlite3)
 CONFIGURE_ARGS+=	 --with-sqlite3
 .include "../../databases/sqlite3/buildlink3.mk"
+.endif
+
+.if !empty(PKG_OPTIONS:Mexctags)
+CONFIGURE_ARGS+=    --with-exuberant-ctags=${LOCALBASE}/bin/exctags
 .endif
